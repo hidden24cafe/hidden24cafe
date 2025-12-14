@@ -4,69 +4,144 @@
   <meta charset="UTF-8" />
   <title>Hidden 24 Café</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
+    :root {
+      --bg: #8b5a2b;
+      --card: rgba(0,0,0,0.25);
+      --btn: #ffffff;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.7);
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #111;
-      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
     }
-    .container {
+
+    .wrap {
       max-width: 420px;
       width: 100%;
-      padding: 24px;
+      padding: 28px 20px 40px;
       text-align: center;
     }
+
     .logo {
-      font-size: 32px;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.8);
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 700;
-      margin-bottom: 8px;
+      letter-spacing: 1px;
     }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 0.5px;
+    }
+
     .tagline {
       font-size: 14px;
-      opacity: 0.8;
-      margin-bottom: 24px;
+      color: var(--muted);
+      margin: 8px 0 22px;
     }
-    .link {
+
+    .info {
+      background: var(--card);
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .btn {
       display: block;
-      background: #fff;
-      color: #111;
+      background: var(--btn);
+      color: #222;
       text-decoration: none;
-      padding: 14px;
-      border-radius: 12px;
-      margin-bottom: 12px;
+      padding: 14px 16px;
+      border-radius: var(--radius);
       font-weight: 500;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      margin-bottom: 12px;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
-    .link:hover {
+
+    .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 18px rgba(0,0,0,.25);
     }
-    footer {
-      margin-top: 24px;
+
+    .btn.subtle {
+      background: rgba(255,255,255,0.9);
+    }
+
+    .social {
+      margin-top: 10px;
+    }
+
+    .social a {
+      display: inline-block;
+      margin: 0 8px;
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer {
+      margin-top: 28px;
       font-size: 12px;
-      opacity: 0.5;
+      color: rgba(255,255,255,0.6);
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="logo">Hidden 24</div>
-    <div class="tagline">Quiet café for studying & working ☕📚</div>
+  <div class="wrap">
 
-    <a class="link" href="https://maps.google.com" target="_blank">📍 Google Maps</a>
-    <a class="link" href="https://facebook.com" target="_blank">📘 Facebook Page</a>
-    <a class="link" href="https://instagram.com" target="_blank">📸 Instagram</a>
-    <a class="link" href="#">📖 Menu</a>
-    <a class="link" href="#">📶 Wifi Password</a>
+    <!-- LOGO -->
+    <div class="logo">H24</div>
 
-    <footer>
-      © Hidden 24 Café
-    </footer>
+    <h1>Hidden 24 Café</h1>
+    <div class="tagline">
+      Quiet café for studying & working ☕📚
+    </div>
+
+    <!-- INFO CARD -->
+    <div class="info">
+      📍 17 Nguyễn Cư Trinh, Cần Thơ<br>
+      ⏰ Open: 7:00 sáng – 2:00 khuya
+    </div>
+
+    <!-- BUTTONS -->
+    <a class="btn" href="https://maps.google.com" target="_blank">📍 Chỉ đường</a>
+    <a class="btn" href="#">📖 Xem menu</a>
+    <a class="btn" href="#">✨ Nhận thông tin ưu đãi</a>
+    <a class="btn subtle" href="#">🔥 Join Hội Chạy Deadline Hidden 24</a>
+
+    <!-- SOCIAL -->
+    <div class="social">
+      <a href="#">TikTok</a> ·
+      <a href="#">Instagram</a> ·
+      <a href="#">Threads</a>
+    </div>
+
+    <div class="footer">
+      Hidden 24 · Xin chào 👋
+    </div>
+
   </div>
 </body>
 </html>
