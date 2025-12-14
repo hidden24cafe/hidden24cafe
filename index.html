@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIDDEN 24. Cafe</title>
+    <title>Hidden 24 Cafe - Bio Link</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* --- THIẾT LẬP CƠ BẢN --- */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #6d4c36; /* Màu nâu chủ đạo từ ảnh */
+            background-color: #6d4c36;
             color: white;
             display: flex;
             justify-content: center;
@@ -27,111 +23,74 @@
 
         .container {
             width: 100%;
-            max-width: 480px; /* Giới hạn chiều rộng giống giao diện điện thoại */
+            max-width: 480px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* --- LOGO VÀ TIÊU ĐỀ --- */
-        .logo-wrapper {
-            margin-top: 40px;
-            margin-bottom: 15px;
-        }
-
+        /* --- LOGO & HEADER --- */
+        .logo-wrapper { margin-top: 40px; margin-bottom: 15px; }
         .logo {
-            width: 100px;
-            height: 100px;
+            width: 100px; height: 100px;
             border-radius: 50%;
             border: 2px solid white;
             object-fit: cover;
-            /* Thay thế đường dẫn ảnh logo của bạn ở thẻ img bên dưới */
         }
+        h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; letter-spacing: 0.5px; }
+        .tiktok-icon { font-size: 24px; margin-bottom: 25px; display: inline-block; }
 
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
-        }
-
-        .tiktok-icon {
-            font-size: 24px;
-            margin-bottom: 25px;
-            display: inline-block;
-        }
-
-        /* --- KHỐI THÔNG TIN (INFO BOX) --- */
+        /* --- INFO BOX --- */
         .info-card {
-            background-color: rgba(60, 40, 30, 0.4); /* Màu nền tối hơn một chút, có độ trong suốt */
+            background-color: rgba(60, 40, 30, 0.4);
             padding: 25px 20px;
-            border-radius: 8px; /* Bo nhẹ 4 góc */
+            border-radius: 8px;
             width: 100%;
             margin-bottom: 30px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        .info-location { font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .info-desc { font-size: 14px; line-height: 1.5; font-weight: 300; }
 
-        .info-location {
-            font-weight: 600;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+        /* --- BUTTONS --- */
+        .links-group { width: 100%; display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+        .btn-link {
+            background-color: #ffffff; color: #4a3425;
+            text-decoration: none; padding: 18px 20px;
+            border-radius: 5px; font-weight: 600; font-size: 15px;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }
-        
-        .info-desc {
-            font-size: 14px;
-            line-height: 1.5;
-            font-weight: 300;
-        }
+        .btn-link:hover { transform: scale(1.02); background-color: #f0f0f0; }
 
-        /* --- CÁC NÚT BẤM (BUTTONS) --- */
-        .links-group {
+        /* --- VIDEO SECTION --- */
+        .video-section {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 15px; /* Khoảng cách giữa các nút */
+            gap: 20px; /* Khoảng cách giữa 2 video */
         }
 
-        .btn-link {
-            background-color: #ffffff;
-            color: #4a3425; /* Chữ màu nâu đậm */
-            text-decoration: none;
-            padding: 18px 20px;
-            border-radius: 5px; /* Bo góc nhẹ giống ảnh */
-            font-weight: 600;
-            font-size: 15px;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: relative;
-            display: block;
-            white-space: nowrap;
+        .video-wrapper {
+            width: 100%;
+            border-radius: 12px;
             overflow: hidden;
-            text-overflow: ellipsis;
+            background: #000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .btn-link:hover {
-            transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi di chuột */
-            background-color: #f0f0f0;
+        blockquote.tiktok-embed {
+            margin: 0 !important;
+            border-radius: 12px !important;
+            min-width: unset !important;
+            width: 100% !important;
         }
 
         /* --- FOOTER --- */
-        footer {
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            opacity: 0.9;
-            letter-spacing: 1px;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 320px) {
-            h1 { font-size: 24px; }
-            .btn-link { padding: 15px; font-size: 13px; }
-        }
+        footer { margin-top: 40px; margin-bottom: 20px; font-size: 14px; font-weight: 600; opacity: 0.9; letter-spacing: 1px; }
     </style>
 </head>
 <body>
@@ -142,10 +101,8 @@
         </div>
 
         <h1>hidden24cafe</h1>
-
-        <div class="tiktok-icon">
-            <i class="fa-brands fa-tiktok"></i>
-        </div>
+        
+        <div class="tiktok-icon"><i class="fa-brands fa-tiktok"></i></div>
 
         <div class="info-card">
             <div class="info-location">
@@ -175,10 +132,22 @@
             </a>
         </div>
 
-        <footer>
-            HIDDEN 24. XIN CHÀO
-        </footer>
+        <div class="video-section">
+            
+            <div class="video-wrapper">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hidden24cafe/video/7312345678901234567" data-video-id="7312345678901234567" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@hidden24cafe" href="https://www.tiktok.com/@hidden24cafe?refer=embed">@hidden24cafe</a> <p>Cafe núp hẻm 24/7 vibe SAIGON...</p> <a target="_blank" title="♬ nhạc nền - Hidden 24" href="https://www.tiktok.com/music/nhac-nen-hidden24?refer=embed">♬ nhạc nền - Hidden 24</a> </section> </blockquote> 
+            </div>
+
+            <div class="video-wrapper">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hidden24cafe/video/7398765432109876543" data-video-id="7398765432109876543" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@hidden24cafe" href="https://www.tiktok.com/@hidden24cafe?refer=embed">@hidden24cafe</a> <p>Úi chỗ nè êm nè...</p> <a target="_blank" title="♬ Chill Vibe" href="https://www.tiktok.com/music/chill-vibe?refer=embed">♬ Chill Vibe</a> </section> </blockquote> 
+            </div>
+
+        </div>
+
+        <footer>HIDDEN 24. XIN CHÀO</footer>
     </div>
+
+    <script async src="https://www.tiktok.com/embed.js"></script>
 
 </body>
 </html>
