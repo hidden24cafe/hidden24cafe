@@ -1,147 +1,184 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <title>Hidden 24 Café</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden 24 Cafe - Bio Link</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    :root {
-      --bg: #8b5a2b;
-      --card: rgba(0,0,0,0.25);
-      --btn: #ffffff;
-      --text: #ffffff;
-      --muted: rgba(255,255,255,0.7);
-      --radius: 14px;
-    }
+    <style>
+        /* --- THIẾT LẬP CƠ BẢN --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    * { box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #6d4c36; /* Màu nâu chủ đạo từ ảnh */
+            color: white;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      justify-content: center;
-    }
+        .container {
+            width: 100%;
+            max-width: 480px; /* Giới hạn chiều rộng giống giao diện điện thoại */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .wrap {
-      max-width: 420px;
-      width: 100%;
-      padding: 28px 20px 40px;
-      text-align: center;
-    }
+        /* --- LOGO VÀ TIÊU ĐỀ --- */
+        .logo-wrapper {
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
 
-    .logo {
-      width: 92px;
-      height: 92px;
-      border-radius: 50%;
-      border: 2px solid rgba(255,255,255,0.8);
-      margin: 0 auto 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid white;
+            object-fit: cover;
+            /* Thay thế đường dẫn ảnh logo của bạn ở thẻ img bên dưới */
+        }
 
-    h1 {
-      margin: 0;
-      font-size: 28px;
-      letter-spacing: 0.5px;
-    }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
 
-    .tagline {
-      font-size: 14px;
-      color: var(--muted);
-      margin: 8px 0 22px;
-    }
+        .tiktok-icon {
+            font-size: 24px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
 
-    .info {
-      background: var(--card);
-      padding: 14px 16px;
-      border-radius: var(--radius);
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
+        /* --- KHỐI THÔNG TIN (INFO BOX) --- */
+        .info-card {
+            background-color: rgba(60, 40, 30, 0.4); /* Màu nền tối hơn một chút, có độ trong suốt */
+            padding: 25px 20px;
+            border-radius: 8px; /* Bo nhẹ 4 góc */
+            width: 100%;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-    .btn {
-      display: block;
-      background: var(--btn);
-      color: #222;
-      text-decoration: none;
-      padding: 14px 16px;
-      border-radius: var(--radius);
-      font-weight: 500;
-      margin-bottom: 12px;
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
+        .info-location {
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .info-desc {
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 300;
+        }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(0,0,0,.25);
-    }
+        /* --- CÁC NÚT BẤM (BUTTONS) --- */
+        .links-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Khoảng cách giữa các nút */
+        }
 
-    .btn.subtle {
-      background: rgba(255,255,255,0.9);
-    }
+        .btn-link {
+            background-color: #ffffff;
+            color: #4a3425; /* Chữ màu nâu đậm */
+            text-decoration: none;
+            padding: 18px 20px;
+            border-radius: 5px; /* Bo góc nhẹ giống ảnh */
+            font-weight: 600;
+            font-size: 15px;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-    .social {
-      margin-top: 10px;
-    }
+        .btn-link:hover {
+            transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi di chuột */
+            background-color: #f0f0f0;
+        }
 
-    .social a {
-      display: inline-block;
-      margin: 0 8px;
-      font-size: 14px;
-      color: var(--muted);
-      text-decoration: none;
-    }
+        /* --- FOOTER --- */
+        footer {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
 
-    .footer {
-      margin-top: 28px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.6);
-    }
-  </style>
+        /* --- RESPONSIVE --- */
+        @media (max-width: 320px) {
+            h1 { font-size: 24px; }
+            .btn-link { padding: 15px; font-size: 13px; }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="wrap">
 
-    <!-- LOGO -->
-    <div class="logo">H24</div>
+    <div class="container">
+        <div class="logo-wrapper">
+            <img src="https://via.placeholder.com/150/4a3425/ffffff?text=HIDDEN+24" alt="Hidden 24 Logo" class="logo">
+        </div>
 
-    <h1>Hidden 24 Café</h1>
-    <div class="tagline">
-      Quiet café for studying & working ☕📚
+        <h1>hidden24cafe</h1>
+
+        <div class="tiktok-icon">
+            <i class="fa-brands fa-tiktok"></i>
+        </div>
+
+        <div class="info-card">
+            <div class="info-location">
+                <i class="fa-solid fa-location-dot" style="color: #ff6b6b;"></i> 
+                <span>17 Nguyễn Cư Trinh, Cần Thơ</span>
+            </div>
+            <p class="info-desc">
+                Nơi trú ẩn an yên cho dân hướng nội chạy deadline. OPEN: 7H sáng - 2H khuya
+            </p>
+        </div>
+
+        <div class="links-group">
+            <a href="#" class="btn-link">
+                ╰┈➤ Chỉ đường
+            </a>
+
+            <a href="#" class="btn-link">
+                ツ Nhận thông tin ưu đãi tại đây
+            </a>
+
+            <a href="#" class="btn-link">
+                ツ Join Hội Chạy Deadline Hidden 24
+            </a>
+
+            <a href="#" class="btn-link">
+                (づ ◕‿◕ )づ Threads
+            </a>
+        </div>
+
+        <footer>
+            HIDDEN 24. XIN CHÀO
+        </footer>
     </div>
 
-    <!-- INFO CARD -->
-    <div class="info">
-      📍 17 Nguyễn Cư Trinh, Cần Thơ<br>
-      ⏰ Open: 7:00 sáng – 2:00 khuya
-    </div>
-
-    <!-- BUTTONS -->
-    <a class="btn" href="https://maps.google.com" target="_blank">📍 Chỉ đường</a>
-    <a class="btn" href="#">📖 Xem menu</a>
-    <a class="btn" href="#">✨ Nhận thông tin ưu đãi</a>
-    <a class="btn subtle" href="#">🔥 Join Hội Chạy Deadline Hidden 24</a>
-
-    <!-- SOCIAL -->
-    <div class="social">
-      <a href="#">TikTok</a> ·
-      <a href="#">Instagram</a> ·
-      <a href="#">Threads</a>
-    </div>
-
-    <div class="footer">
-      Hidden 24 · Xin chào 👋
-    </div>
-
-  </div>
 </body>
 </html>
